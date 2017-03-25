@@ -6,11 +6,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 /**
  * Created by Pavel1 on 3/24/2017.
  */
-public class NavigationHalper {
-FirefoxDriver wd;
+public class NavigationHalper extends HelperBase{
 
     public NavigationHalper(FirefoxDriver wd) {
-        this.wd=wd;
+       super(wd);
     }
 
     public void gotoGroupPage() {
@@ -18,7 +17,7 @@ FirefoxDriver wd;
     }
 
     public void gotoContactPage() {
-        wd.findElement(By.linkText("add new")).click();
+        click(By.linkText("add new"));
     }
 
 
