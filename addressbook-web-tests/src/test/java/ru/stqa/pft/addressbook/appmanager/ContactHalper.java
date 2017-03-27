@@ -20,9 +20,22 @@ public class ContactHalper extends HelperBase {
         type(By.name("lastname"),contactData.getLastname());
         type(By.name("nickname"),contactData.getNickname());
         type(By.name("address"),contactData.getAddress());
-    
+
     }
     public void enterNewContact() {
        click(By.xpath("//div[@id='content']/form/input[21]"));
     }
+    public void selectContact() {
+        click(By.name("selected[]"));
+
+
+    }
+
+    public void deleteContact() {
+        click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
+        wd.switchTo().alert().accept();
+
+
+    }
+
 }
