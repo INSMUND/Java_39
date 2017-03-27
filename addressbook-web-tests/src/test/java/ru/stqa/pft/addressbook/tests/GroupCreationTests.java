@@ -9,13 +9,11 @@ public class GroupCreationTests extends Testbase {
 
     @Test
     public void testGroupCreation() {
-       // wd.get("http://localhost/addressbook/");
-      //  login();
         applicationManager.getNavigationHalper().gotoGroupPage();
         applicationManager.getGroupHelper().initGroupCreation();
         applicationManager.getGroupHelper().fillGroup(new GroupData("test11", "test12", "test13"));
         applicationManager.getGroupHelper().submitGroupCreation();
-        applicationManager.getGroupHelper().returntoGroupPage();
+        applicationManager.getNavigationHalper().returntoGroupPage();
     }
 
 }

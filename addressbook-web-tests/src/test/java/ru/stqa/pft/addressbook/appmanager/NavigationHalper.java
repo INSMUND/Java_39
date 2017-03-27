@@ -23,6 +23,12 @@ public class NavigationHalper extends HelperBase{
     public void gotoHomePage() {
         click(By.linkText("home"));
     }
+    public void returntoHomePage() {
+        click(By.linkText("home page"));
+    }
+    public void returntoGroupPage() {
+        click(By.linkText("group page"));
+    }
 
 
 }

@@ -9,11 +9,10 @@ public class GroupDeletionTests extends Testbase {
     
     @Test
     public void testGroupDeletion() {
-
         applicationManager.getNavigationHalper().gotoGroupPage();
         applicationManager.getGroupHelper().selectGroup();
         applicationManager.getGroupHelper().deleteSelectedGroups();
-        applicationManager.getGroupHelper().returntoGroupPage();
+        applicationManager.getNavigationHalper().returntoGroupPage();
     }
 
 

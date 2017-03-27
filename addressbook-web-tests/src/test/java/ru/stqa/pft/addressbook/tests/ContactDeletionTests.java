@@ -15,13 +15,11 @@ import org.openqa.selenium.*;
 import static org.openqa.selenium.OutputType.*;
 
 public class ContactDeletionTests extends Testbase {
-    //   FirefoxDriver wd;
+
 
 
     @Test
-    public void ContactDeletion() {
-
-
+    public void testContactDeletion() {
         applicationManager.getNavigationHalper().gotoHomePage();
         applicationManager.getContactHalper().selectContact();
         applicationManager.getContactHalper().deleteContact();

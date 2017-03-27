@@ -36,15 +36,6 @@ public class ApplicationManager {
         wd.quit();
     }
 
- //   public void enterNewContact() {
- //       wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
- //   }
- //   public void DeleteContact() {
-  //      wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();}
-
-
-
-
     public GroupHelper getGroupHelper() {
         return groupHelper;
     }
