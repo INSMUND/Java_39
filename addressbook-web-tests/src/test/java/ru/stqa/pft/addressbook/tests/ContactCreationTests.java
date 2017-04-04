@@ -9,7 +9,7 @@ public class ContactCreationTests extends Testbase {
     @Test
     public void testContactCreation() {
         applicationManager.getNavigationHalper().gotoContactPage();
-        applicationManager.getContactHalper().fillContact(new ContactData("iulia", "piotr", "shilonosova", "iulaSH", "iuliashilonosova@gmail.com"));
+        applicationManager.getContactHalper().fillContact(new ContactData("iulia", "piotr", "shilonosova", "iulaSH", "iuliashilonosova@gmail.com","test1"),true);
         applicationManager.getContactHalper().enterNewContact();
     }
 

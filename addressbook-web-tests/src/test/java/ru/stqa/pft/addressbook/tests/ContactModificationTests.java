@@ -12,7 +12,7 @@ public class ContactModificationTests extends Testbase{
     public void testContactModification() {
         applicationManager.getNavigationHalper().gotoHomePage();
         applicationManager.getContactHalper().editContact();
-        applicationManager.getContactHalper().fillContact(new ContactData("marina", "piotr", "shilonosova", "ssttt", "iuliashilonosova@gmail.com"));
+        applicationManager.getContactHalper().fillContact(new ContactData("marina", "piotr", "shilonosova", "ssttt", "iuliashilonosova@gmail.com",null),false);
         applicationManager.getContactHalper().updateContact();
         applicationManager.getNavigationHalper().returntoHomePage();
     }
