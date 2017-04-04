@@ -56,4 +56,14 @@ public class ContactHalper extends HelperBase {
     }
 
 
+    public void createContact(ContactData contactData,boolean creation) {
+
+        fillContact(contactData,creation);
+        enterNewContact();
+    }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.name("selected[]"));
+
+    }
 }

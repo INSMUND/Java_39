@@ -24,6 +24,7 @@ public class GroupHelper extends HelperBase {
         type(By.name("group_name"), groupData.getName());
         type(By.name("group_header"), groupData.getHeader());
         type(By.name("group_footer"), groupData.getFooter());
+
     }
 
     public void initGroupCreation() {
@@ -45,4 +46,15 @@ public class GroupHelper extends HelperBase {
     }
 
 
+    public void createGroup(GroupData group) {
+        initGroupCreation();
+       fillGroup(group);
+        submitGroupCreation();
+
+
+    }
+
+    public boolean isThereAGroup() {
+        return isElementPresent(By.name("selected[]"));
+    }
 }
