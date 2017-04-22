@@ -1,10 +1,13 @@
 package ru.stqa.pft.addressbook.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.Date;
 import java.io.File;
@@ -26,11 +29,17 @@ public class ContactDeletionTests extends Testbase {
         if (!applicationManager.getContactHalper().isThereAContact())
         {
             applicationManager.getNavigationHalper().gotoContactPage();
-          applicationManager.getContactHalper().createContact(new ContactData("iulia", "piotr", "shilonosova", "iulaSH", "iuliashilonosova@gmail.com","test11"),true);
+            applicationManager.getContactHalper().createContact(new ContactData("iulia", "piotr", "shilonosova", "iulaSH", "iuliashilonosova@gmail.com","test11"),true);
 
         }
-        applicationManager.getContactHalper().selectContact();
+        List<ContactData> before=applicationManager.getContactHalper().getContactDataList();
+
+        applicationManager.getContactHalper().selectContact(before.size()-1);
         applicationManager.getContactHalper().deleteContact();
+        applicationManager.getNavigationHalper().gotoHomePage();
+        List<ContactData> after=applicationManager.getContactHalper().getContactDataList();
+        before.remove(before.size()-1);
+        Assert.assertEquals(new HashSet<Object>(after), new HashSet<Object>(before));
 
     }
 }
